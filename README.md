@@ -1,18 +1,23 @@
-# FIBONACCI
-    def factorial(f):
-    if f==0 or f==1:
+def fibonacci(n):
+    if n <= 0:
+        return "Input should be a positive integer."
+    elif n == 1:
+        return 0
+    elif n == 2:
         return 1
     else:
-        return n* factorial (n-1)
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
 def main():
     try:
-        num=int(input("enter the number to find factorial of:"))
-        if num<0:
-            print("factorial of negative value if not defined")
+        num = int(input("Enter the position to find the Fibonacci number: "))
+        if num < 1:
+            print("Position should be a positive integer.")
         else:
-            result=factorial(num)
-            print (“the factorial of “,num,”is”,result)
-    
-    except valueerror:
-        print("invalid input")
+            result = fibonacci(num)
+            print(f"The Fibonacci number at position {num} is {result}.")
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
 main()
+
